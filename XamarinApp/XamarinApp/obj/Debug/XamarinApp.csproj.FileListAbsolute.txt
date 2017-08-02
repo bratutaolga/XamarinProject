@@ -1,0 +1,15 @@
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\bin\Debug\XamarinApp.dll
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\bin\Debug\XamarinApp.pdb
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\bin\Debug\Xamarin.Forms.Core.dll
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\bin\Debug\Xamarin.Forms.Platform.dll
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\bin\Debug\Xamarin.Forms.Xaml.dll
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\bin\Debug\Xamarin.Forms.Core.pdb
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\bin\Debug\Xamarin.Forms.Core.xml
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\bin\Debug\Xamarin.Forms.Platform.pdb
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\bin\Debug\Xamarin.Forms.Xaml.pdb
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\bin\Debug\Xamarin.Forms.Xaml.xml
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\obj\Debug\XamarinApp.csprojResolveAssemblyReference.cache
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\obj\Debug\XamarinApp.MainPage.xaml.g.cs
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\obj\Debug\XamarinApp.App.xaml.g.cs
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\obj\Debug\XamarinApp.dll
+D:\XamarinApp\XamarinApp\XamarinApp\XamarinApp\obj\Debug\XamarinApp.pdb
