@@ -13,7 +13,7 @@ namespace XamarinApp.ViewModels
 {
     public class MainPageViewModel: ViewModelBase
     {
-        readonly INavigationService _navigationService;
+        readonly INavigationService _navService;
         IService<Dino> _dinoService;
 
         DelegateCommand<Dino> _itemSelectedCommand;
@@ -29,7 +29,7 @@ namespace XamarinApp.ViewModels
 
         public MainPageViewModel(INavigationService navigationService, IService<Dino> dinoService)
         {
-            _navigationService = navigationService;
+            _navService = navigationService;
             _dinoService = dinoService;
         }
 
@@ -38,7 +38,7 @@ namespace XamarinApp.ViewModels
             var param = new NavigationParameters();
             param.Add("dino", item);
 
-            await _navigationService.NavigateAsync("DetailsPage", param);
+            await _navService.NavigateAsync("DetailsPage", param);
         }
 
         public override async void OnNavigatedTo(NavigationParameters parameters)

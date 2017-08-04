@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImagePathConverter.cs" />
     <Compile Include="Model\Dino.cs" />
     <Compile Include="Service\DinoService.cs" />
     <Compile Include="Service\IService.cs" />

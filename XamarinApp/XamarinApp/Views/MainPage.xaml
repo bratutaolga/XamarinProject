@@ -3,13 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             xmlns:local="clr-namespace:XamarinApp.Views"
-             ItemsSource="{Binding MainList}"
-             x:Class="XamarinApp.Views.MainPage">
+             xmlns:local="clr-namespace:XamarinApp.Views;assembly=XamarinApp"
+             xmlns:c="clr-namespace:XamarinApp;assembly=XamarinApp"
+             x:Class="XamarinApp.Views.MainPage"
+             Title="Dinosaurs">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <c:LocalImagePathConverter x:Key="ImagePathConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     
+    <ListView ItemsSource="{Binding MainList}" ItemTapped="OnItemTapped">
+        <ListView.RowHeight>
+            <OnPlatform x:TypeArguments="x:Int32" iOS="128" Android="136" WinPhone="144" />
+        </ListView.RowHeight>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition>
+                                <ColumnDefinition.Width>
+                                    <OnPlatform x:TypeArguments="GridLength" iOS="120" Android="144" WinPhone="144" />
+                                </ColumnDefinition.Width>
+                            </ColumnDefinition>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding ImgPath, Converter={StaticResource ImagePathConverter}}" />
+                        <Grid Grid.Column="1">
+                            <Grid.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" iOS="4,8,0,8" Android="8,2,0,4" WinPhone="12,-2,0,-4" />
+                            </Grid.Padding>
+                            <Label Text="{Binding Name}" FontSize="Large" LineBreakMode="WordWrap" />
+                        </Grid>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 
-	<Label Text="Welcome to Xamarin Forms!!!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+
 
 </ContentPage>

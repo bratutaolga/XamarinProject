@@ -4,9 +4,5 @@
              xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
              x:Class="XamarinApp.App">
 
-    <!--<Application.Resources>
-
-        Application resource dictionary 
-
-    </Application.Resources>-->
+  
 </prism:PrismApplication>
