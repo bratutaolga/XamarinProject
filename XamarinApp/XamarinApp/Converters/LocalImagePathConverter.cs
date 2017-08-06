@@ -1,24 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace XamarinApp
+namespace XamarinApp.Converters
 {
-    public class ImagePathConverter : IValueConverter
+    public class LocalImagePathConverter : IValueConverter
     {
         private static string _assembly;
 
-        static ImagePathConverter()
+        static LocalImagePathConverter()
         {
-           _assembly = typeof(ImagePathConverter).AssemblyQualifiedName.Split(',')[1].Trim() + '.';
+           
+            _assembly = typeof(LocalImagePathConverter).AssemblyQualifiedName.Split(',')[1].Trim() + '.';
         }
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            
             string source = _assembly + ((string)value).Replace('/', '.');
             return ImageSource.FromResource(source);
         }

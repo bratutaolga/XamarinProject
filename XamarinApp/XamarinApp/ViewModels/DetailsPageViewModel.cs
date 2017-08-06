@@ -1,14 +1,9 @@
-﻿using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using XamarinApp.Model;
+using XamarinApp.Business;
+using Prism.Navigation;
 
 namespace XamarinApp.ViewModels
 {
-    public class DetailsPageViewModel: ViewModelBase, INavigationAware
+    public class DetailsPageViewModel : ViewModelBase, INavigationAware
     {
         private Dino _dino;
         public Dino Dino

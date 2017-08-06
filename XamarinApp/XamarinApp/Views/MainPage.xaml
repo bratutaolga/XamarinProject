@@ -1,19 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             xmlns:local="clr-namespace:XamarinApp.Views;assembly=XamarinApp"
-             xmlns:c="clr-namespace:XamarinApp;assembly=XamarinApp"
-             x:Class="XamarinApp.Views.MainPage"
-             Title="Dinosaurs">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+            prism:ViewModelLocator.AutowireViewModel="True"
+			      xmlns:local="clr-namespace:XamarinApp.Views;assembly=XamarinApp"
+            xmlns:c="clr-namespace:XamarinApp.Converters;assembly=XamarinApp"
+            x:Class="XamarinApp.Views.MainPage"
+            Title="Dinosaurs World">
+
     <ContentPage.Resources>
         <ResourceDictionary>
-            <c:LocalImagePathConverter x:Key="ImagePathConverter" />
+            <c:LocalImagePathConverter x:Key="LocalImagePathConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    
-    <ListView ItemsSource="{Binding MainList}" ItemTapped="OnItemTapped">
+
+    <ListView ItemsSource="{Binding DinoList}" ItemTapped="OnItemTapped">
         <ListView.RowHeight>
             <OnPlatform x:TypeArguments="x:Int32" iOS="128" Android="136" WinPhone="144" />
         </ListView.RowHeight>
@@ -29,7 +30,7 @@
                             </ColumnDefinition>
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Image Source="{Binding ImgPath, Converter={StaticResource ImagePathConverter}}" />
+                        <Image Source="{Binding ImagePath, Converter={StaticResource LocalImagePathConverter}}" />
                         <Grid Grid.Column="1">
                             <Grid.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" iOS="4,8,0,8" Android="8,2,0,4" WinPhone="12,-2,0,-4" />
@@ -41,7 +42,8 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-
-
-
 </ContentPage>
+    
+
+
+

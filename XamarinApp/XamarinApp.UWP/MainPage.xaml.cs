@@ -14,8 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
-using Prism;
-using XamarinApp;
+
 namespace XamarinApp.UWP
 {
     public sealed partial class MainPage
@@ -24,10 +23,10 @@ namespace XamarinApp.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new App(new UwpInitializer()));
-            
+            LoadApplication(new XamarinApp.App(new UwpInitializer()));
         }
     }
+
     public class UwpInitializer : IPlatformInitializer
     {
         public void RegisterTypes(IUnityContainer container)
@@ -35,4 +34,5 @@ namespace XamarinApp.UWP
 
         }
     }
+
 }

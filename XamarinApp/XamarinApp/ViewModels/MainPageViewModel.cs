@@ -1,50 +1,44 @@
-﻿using Prism.Commands;
+using XamarinApp.Business;
+using XamarinApp.Services;
+using Prism.Commands;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using XamarinApp.Model;
-using XamarinApp.Service;
 
 namespace XamarinApp.ViewModels
 {
-    public class MainPageViewModel: ViewModelBase
+    public class MainPageViewModel : ViewModelBase
     {
-        readonly INavigationService _navService;
+        readonly INavigationService _navigationService;
         IService<Dino> _dinoService;
 
-        DelegateCommand<Dino> _itemSelectedCommand;
-        public DelegateCommand<Dino> ItemSelectedCommand => 
-            _itemSelectedCommand != null ? _itemSelectedCommand : (_itemSelectedCommand = new DelegateCommand<Dino>(ItemSelected));
+        DelegateCommand<Dino> _dinoSelectedCommand;
+        public DelegateCommand<Dino> DinoSelectedCommand => _dinoSelectedCommand != null ? _dinoSelectedCommand : (_dinoSelectedCommand = new DelegateCommand<Dino>(DinoSelected));
 
-        private ObservableCollection<Dino> _mainList;
-        public ObservableCollection<Dino> MainList
+        private ObservableCollection<Dino> _dinoList;
+        public ObservableCollection<Dino> DinoList
         {
-            get { return _mainList; }
-            set { SetProperty(ref _mainList, value); }
+            get { return _dinoList; }
+            set { SetProperty(ref _dinoList, value); }
         }
 
         public MainPageViewModel(INavigationService navigationService, IService<Dino> dinoService)
         {
-            _navService = navigationService;
+            _navigationService = navigationService;
             _dinoService = dinoService;
         }
 
-        private async void ItemSelected(Dino item)
+        private async void DinoSelected(Dino item)
         {
-            var param = new NavigationParameters();
-            param.Add("dino", item);
+            var p = new NavigationParameters();
+            p.Add("dino", item);
 
-            await _navService.NavigateAsync("DetailsPage", param);
+            await _navigationService.NavigateAsync("DetailsPage", p);
         }
 
         public override async void OnNavigatedTo(NavigationParameters parameters)
         {
-            if (MainList == null)
-                MainList = new ObservableCollection<Dino>(await _dinoService.GetAll());
+            if (DinoList == null)
+                DinoList = new ObservableCollection<Dino>(await _dinoService.GetAll());
         }
     }
 }

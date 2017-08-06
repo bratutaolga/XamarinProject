@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using XamarinApp.Model;
+using XamarinApp.Business;
 using XamarinApp.ViewModels;
+using Xamarin.Forms;
 
 namespace XamarinApp.Views
 {
@@ -14,12 +9,11 @@ namespace XamarinApp.Views
         public MainPage()
         {
             InitializeComponent();
-
         }
 
         private async void OnItemTapped(object sender, ItemTappedEventArgs args)
         {
-            ((MainPageViewModel)this.BindingContext).ItemSelectedCommand.Execute((Dino)args.Item);
+            ((MainPageViewModel)this.BindingContext).DinoSelectedCommand.Execute((Dino)args.Item);            
         }
     }
 }

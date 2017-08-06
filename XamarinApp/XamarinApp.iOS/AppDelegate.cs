@@ -30,6 +30,7 @@ namespace XamarinApp.iOS
             return base.FinishedLaunching(app, options);
         }
     }
+
     public class iOSInitializer : IPlatformInitializer
     {
         public void RegisterTypes(IUnityContainer container)
@@ -37,4 +38,5 @@ namespace XamarinApp.iOS
 
         }
     }
+
 }
